@@ -4,3 +4,14 @@
 /* Se importa la libreria de bootstrap 4.6 */
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/Citas.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.card {
+    margin: 0px, 40px;
+}
