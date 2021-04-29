@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-crear-citas',
@@ -11,12 +11,13 @@ export class CrearCitasComponent implements OnInit {
   hora:'';
   sintomas:'';
   incorrecto = false;
-
+  @Output() nuevaCita  = new EventEmitter<any>();
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-  agengarCita():void{
+  agendarCita():void{
     if(this.nombre=='' || this.fecha=='' || this.hora=='' || 
       this.sintomas==''){
         this.incorrecto = true;
@@ -31,6 +32,7 @@ export class CrearCitasComponent implements OnInit {
         hora: this.hora,
         sintomas: this.sintomas
       }
+      this.nuevaCita.emit(CITA);
       this.resetCampos();
 
   }
