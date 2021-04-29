@@ -11,4 +11,7 @@ export class AppComponent {
   agendarCita(cita: any){
      this.listCitas.push(cita)
   }
+  eliminarCitaListado(index: number){
+    this.listCitas.splice(index, 1);
+  }
 }
